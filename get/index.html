@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Futbolito — Télécharger</title>
+<meta name="robots" content="noindex">
+
+<!-- Aperçu dans WhatsApp / iMessage / Messenger -->
+<meta property="og:title" content="Futbolito — Devine le footballeur du jour">
+<meta property="og:description" content="Un joueur mystère par jour. Défie tes amis.">
+<meta property="og:image" content="https://media.base44.com/images/public/698354a9f161efa7bb8de9a0/adf4dfdd1_Logs512.png">
+<meta property="og:type" content="website">
+
+<!--
+  [SMART-LINK-v1] Page de redirection vers le bon store — 29/07/2026
+
+  À déposer sur GitHub Pages à l'adresse :  /get/index.html
+  → accessible via  https://futbolitodev.github.io/get/
+
+  Pourquoi cette page : un seul lien dans les invitations au lieu de deux
+  (iPhone + Android), ce qui raccourcit nettement le message partagé.
+  Ce n'est PAS un lien vers le jeu web : c'est un pur redirecteur vers les
+  stores, cohérent avec la règle « pousser les installs mobiles ».
+
+  Le paramètre ?c=CODE transporte le code d'invitation. Aujourd'hui la page se
+  contente de l'afficher pour que le joueur le retienne. Le jour où les App
+  Links seront actifs, il suffira de décommenter le bloc APP LINKS ci-dessous
+  pour que l'app s'ouvre directement avec le code — sans invalider les
+  invitations déjà envoyées, puisque l'URL ne change pas.
+-->
+
+<style>
+  :root { --vert: #00C85A; --fond: #0f172a; --carte: #1e293b; --bord: #334155; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--fond); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #fff; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; text-align: center;
+  }
+  .carte { max-width: 380px; width: 100%; }
+  .logo { width: 88px; height: 88px; border-radius: 20px; margin: 0 0 20px; }
+  h1 { font-size: 24px; font-weight: 800; margin: 0 0 8px; }
+  p.sous { color: #94a3b8; font-size: 15px; margin: 0 0 24px; line-height: 1.5; }
+  .bloc-code {
+    background: var(--carte); border: 1px solid var(--vert); border-radius: 16px;
+    padding: 16px; margin: 0 0 24px;
+  }
+  .bloc-code .label {
+    font-size: 11px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--vert); margin: 0 0 10px;
+  }
+  .code { font-size: 30px; font-weight: 900; letter-spacing: .16em; margin: 0 0 8px; }
+  .bloc-code .aide { font-size: 12px; color: #64748b; margin: 0; line-height: 1.5; }
+  a.btn {
+    display: block; text-decoration: none; border-radius: 14px;
+    padding: 15px 18px; font-size: 16px; font-weight: 800; margin: 0 0 10px;
+    background: var(--vert); color: #fff;
+  }
+  a.btn.sec { background: var(--carte); border: 1px solid var(--bord); color: #e2e8f0; }
+  .attente { color: #64748b; font-size: 13px; margin: 14px 0 0; }
+</style>
+</head>
+<body>
+<div class="carte">
+  <img class="logo" src="https://media.base44.com/images/public/698354a9f161efa7bb8de9a0/adf4dfdd1_Logs512.png" alt="Futbolito">
+  <h1>Futbolito</h1>
+  <p class="sous">Devine le footballeur mystère du jour, et affronte tes amis.</p>
+
+  <div class="bloc-code" id="blocCode" style="display:none">
+    <p class="label">Code d'invitation</p>
+    <p class="code" id="code">------</p>
+    <p class="aide">Note-le : tu le saisiras dans l'app,<br>onglet <strong>Amis</strong> → <strong>Entrer un code</strong>.</p>
+  </div>
+
+  <a class="btn" id="btnPrincipal" href="#">Télécharger l'app</a>
+  <a class="btn sec" id="btnSecondaire" href="#" style="display:none">Autre plateforme</a>
+
+  <p class="attente" id="attente"></p>
+</div>
+
+<script>
+(function () {
+  var IOS = 'https://apps.apple.com/app/id6767530268';
+  var ANDROID = 'https://play.google.com/store/apps/details?id=com.futbolito.game';
+
+  // Code d'invitation transporté par ?c=
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+  if (code.length === 6) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('blocCode').style.display = 'block';
+  }
+
+  // Détection de plateforme. On teste iPad séparément : depuis iPadOS 13 il
+  // s'annonce comme un Mac, donc un simple test /iPad/ le manque.
+  var ua = navigator.userAgent || '';
+  var estIOS = /iPad|iPhone|iPod/.test(ua)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var estAndroid = /Android/i.test(ua);
+
+  var principal = document.getElementById('btnPrincipal');
+  var secondaire = document.getElementById('btnSecondaire');
+  var attente = document.getElementById('attente');
+
+  if (estIOS || estAndroid) {
+    var cible = estIOS ? IOS : ANDROID;
+    principal.href = cible;
+    principal.textContent = estIOS ? 'Télécharger sur l\'App Store' : 'Télécharger sur Google Play';
+
+    // ── APP LINKS (à activer après le rebuild natif) ────────────────
+    // Tenter d'ouvrir l'app installée avec le code déjà rempli, et basculer
+    // sur le store si rien ne se passe au bout d'1,2 s.
+    //
+    // if (code.length === 6) {
+    //   window.location.href = 'https://futbolito.base44.app/Amis?league=' + code;
+    //   setTimeout(function () { window.location.href = cible; }, 1200);
+    //   return;
+    // }
+
+    // Redirection automatique, mais laissée assez lente pour que le code
+    // s'affiche et se mémorise. Sans ce délai, le joueur ne le voit jamais.
+    var delai = code.length === 6 ? 2600 : 900;
+    attente.textContent = 'Redirection vers le store…';
+    setTimeout(function () { window.location.href = cible; }, delai);
+  } else {
+    // Ordinateur : aucune redirection possible, on propose les deux stores.
+    principal.href = IOS;
+    principal.textContent = 'App Store (iPhone)';
+    secondaire.href = ANDROID;
+    secondaire.textContent = 'Google Play (Android)';
+    secondaire.style.display = 'block';
+    attente.textContent = 'Ouvre ce lien depuis ton téléphone pour installer directement.';
+  }
+})();
+</script>
+</body>
+</html>
