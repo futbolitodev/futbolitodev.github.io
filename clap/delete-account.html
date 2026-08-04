@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clap — Supprimer son compte / Delete your account</title>
+<style>
+  :root{--bg:#111214;--surf:#17181B;--hair:#3A3D42;--txt:#F3F1ED;--txt2:#A8ACB3;--txt3:#7E838B;--gold:#D4A93C}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:32px 20px 80px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:28px;letter-spacing:-.5px;margin:0 0 4px}
+  h2{font-size:19px;margin:38px 0 10px;letter-spacing:-.2px}
+  h3{font-size:15px;margin:22px 0 6px;color:var(--gold)}
+  p,li{color:var(--txt2)}
+  a{color:var(--gold)}
+  .meta{color:var(--txt3);font-size:13px;margin-bottom:8px}
+  .switch{display:flex;gap:8px;margin:18px 0 30px}
+  .switch button{background:var(--surf);color:var(--txt2);border:1px solid var(--hair);border-radius:999px;padding:7px 16px;font:inherit;font-size:13px;cursor:pointer}
+  .switch button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#1a1206;font-weight:600}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--hair);vertical-align:top}
+  th{color:var(--txt);font-weight:600}
+  .card{background:var(--surf);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;margin:16px 0}
+  ol li{margin-bottom:6px}
+  [hidden]{display:none}
+  footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--hair);color:var(--txt3);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="switch">
+    <button id="b-fr" aria-pressed="true">Français</button>
+    <button id="b-en" aria-pressed="false">English</button>
+  </div>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <section id="fr">
+    <h1>Supprimer son compte Clap</h1>
+    <p class="meta">Application <strong>Clap : Séries, Films</strong> — éditeur : Karim Fardoun — dernière mise à jour : 4 août 2026</p>
+
+    <p>Cette page explique comment demander la suppression définitive de ton compte Clap et des données associées. Deux chemins existent : depuis l'application, ou par e-mail si tu ne l'as plus installée.</p>
+
+    <h2>Depuis l'application</h2>
+    <div class="card">
+      <ol>
+        <li>Ouvre Clap et connecte-toi.</li>
+        <li>Va dans l'onglet <strong>Profil</strong>.</li>
+        <li>Descends jusqu'à <strong>Supprimer mon compte</strong>.</li>
+        <li>Confirme deux fois — la seconde confirmation est définitive.</li>
+      </ol>
+    </div>
+    <p>La suppression est immédiate. Il n'y a aucun moyen de récupérer ces données ensuite.</p>
+
+    <h2>Sans l'application</h2>
+    <p>Si tu as désinstallé Clap ou ne parviens pas à te connecter, écris à <a href="mailto:karim.fardoun@gmail.com?subject=Suppression%20de%20mon%20compte%20Clap">karim.fardoun@gmail.com</a> <strong>depuis l'adresse e-mail associée à ton compte</strong>, avec « Suppression de mon compte Clap » en objet. C'est cette correspondance d'adresses qui nous permet de vérifier que la demande vient bien de toi.</p>
+    <p>La demande est traitée sous 30 jours au plus.</p>
+
+    <h2>Ce qui est supprimé</h2>
+    <table>
+      <tr><th>Donnée</th><th>Devenir</th></tr>
+      <tr><td>Compte et adresse e-mail</td><td>Supprimés</td></tr>
+      <tr><td>Pseudo, nom affiché, bio, photo de profil</td><td>Supprimés</td></tr>
+      <tr><td>Bibliothèque : films et séries suivis, statuts</td><td>Supprimés</td></tr>
+      <tr><td>Épisodes marqués comme vus</td><td>Supprimés</td></tr>
+      <tr><td>Notes</td><td>Supprimées</td></tr>
+      <tr><td>Abonnements et abonnés</td><td>Supprimés</td></tr>
+    </table>
+
+    <h2>Ce qui est conservé, et combien de temps</h2>
+    <p>Les données ci-dessus disparaissent immédiatement des bases actives. Elles subsistent au plus <strong>30 jours</strong> dans les sauvegardes chiffrées de notre hébergeur, le temps que celles-ci soient remplacées par rotation, puis elles cessent définitivement d'exister.</p>
+    <p>Aucune donnée n'est conservée au-delà, à une exception près : si la loi nous oblige à garder une trace d'une demande (par exemple un échange écrit relatif à un signalement), cette trace est conservée pour la durée légale applicable et rien d'autre.</p>
+
+    <h2>Les données restées sur ton téléphone</h2>
+    <p>Certaines informations ne quittent jamais ton appareil et ne sont donc pas concernées par la suppression du compte : le calendrier détaillé de tes visionnages, tes compteurs de revisionnage, tes commentaires, tes plateformes de streaming, ta langue et ton pays.</p>
+    <p>Pour les effacer, désinstalle l'application, ou utilise <strong>Profil → Réinitialiser Clap</strong>.</p>
+
+    <h2>Une question</h2>
+    <p>Écris à <a href="mailto:karim.fardoun@gmail.com">karim.fardoun@gmail.com</a>. Voir aussi la <a href="https://futbolitodev.github.io/clap/privacy.html">politique de confidentialité</a>.</p>
+  </section>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section id="en" hidden>
+    <h1>Delete your Clap account</h1>
+    <p class="meta">App <strong>Clap: Series &amp; Movies</strong> — publisher: Karim Fardoun — last updated: 4 August 2026</p>
+
+    <p>This page explains how to request permanent deletion of your Clap account and its associated data. There are two routes: from inside the app, or by email if you no longer have it installed.</p>
+
+    <h2>From the app</h2>
+    <div class="card">
+      <ol>
+        <li>Open Clap and sign in.</li>
+        <li>Go to the <strong>Profile</strong> tab.</li>
+        <li>Scroll down to <strong>Delete my account</strong>.</li>
+        <li>Confirm twice — the second confirmation is final.</li>
+      </ol>
+    </div>
+    <p>Deletion is immediate. There is no way to recover this data afterwards.</p>
+
+    <h2>Without the app</h2>
+    <p>If you have uninstalled Clap or cannot sign in, email <a href="mailto:karim.fardoun@gmail.com?subject=Delete%20my%20Clap%20account">karim.fardoun@gmail.com</a> <strong>from the address associated with your account</strong>, with "Delete my Clap account" as the subject. Matching addresses is how we verify the request really comes from you.</p>
+    <p>Requests are processed within 30 days at most.</p>
+
+    <h2>What is deleted</h2>
+    <table>
+      <tr><th>Data</th><th>Outcome</th></tr>
+      <tr><td>Account and email address</td><td>Deleted</td></tr>
+      <tr><td>Username, display name, bio, profile photo</td><td>Deleted</td></tr>
+      <tr><td>Library: tracked movies and series, statuses</td><td>Deleted</td></tr>
+      <tr><td>Episodes marked as watched</td><td>Deleted</td></tr>
+      <tr><td>Ratings</td><td>Deleted</td></tr>
+      <tr><td>Follows and followers</td><td>Deleted</td></tr>
+    </table>
+
+    <h2>What is retained, and for how long</h2>
+    <p>The data above disappears from live databases immediately. It persists for at most <strong>30 days</strong> in our host's encrypted backups, until those are replaced by rotation, after which it ceases to exist entirely.</p>
+    <p>Nothing is kept beyond that, with one exception: where the law requires us to retain a record of a request (for instance written correspondence about a report), that record is kept for the applicable legal period and nothing else.</p>
+
+    <h2>Data left on your phone</h2>
+    <p>Some information never leaves your device and is therefore unaffected by account deletion: your detailed viewing calendar, rewatch counters, comments, streaming platforms, language and country.</p>
+    <p>To erase it, uninstall the app, or use <strong>Profile → Reset Clap</strong>.</p>
+
+    <h2>Questions</h2>
+    <p>Email <a href="mailto:karim.fardoun@gmail.com">karim.fardoun@gmail.com</a>. See also the <a href="https://futbolitodev.github.io/clap/privacy.html">privacy policy</a>.</p>
+  </section>
+
+  <footer>Clap — Karim Fardoun · <a href="mailto:karim.fardoun@gmail.com">karim.fardoun@gmail.com</a></footer>
+</div>
+
+<script>
+  const fr = document.getElementById('fr'), en = document.getElementById('en');
+  const bfr = document.getElementById('b-fr'), ben = document.getElementById('b-en');
+  function show(lang){
+    const isFr = lang === 'fr';
+    fr.hidden = !isFr; en.hidden = isFr;
+    bfr.setAttribute('aria-pressed', String(isFr));
+    ben.setAttribute('aria-pressed', String(!isFr));
+    document.documentElement.lang = lang;
+  }
+  bfr.onclick = () => show('fr');
+  ben.onclick = () => show('en');
+  if (!(navigator.language || '').toLowerCase().startsWith('fr')) show('en');
+</script>
+</body>
+</html>
