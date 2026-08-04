@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clap — Assistance / Support</title>
+<style>
+  :root{--bg:#111214;--surf:#17181B;--hair:#3A3D42;--txt:#F3F1ED;--txt2:#A8ACB3;--txt3:#7E838B;--gold:#D4A93C}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:32px 20px 80px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:28px;letter-spacing:-.5px;margin:0 0 4px}
+  h2{font-size:19px;margin:38px 0 10px;letter-spacing:-.2px}
+  h3{font-size:15px;margin:22px 0 6px;color:var(--gold)}
+  p,li{color:var(--txt2)}
+  a{color:var(--gold)}
+  .meta{color:var(--txt3);font-size:13px;margin-bottom:8px}
+  .switch{display:flex;gap:8px;margin:18px 0 30px}
+  .switch button{background:var(--surf);color:var(--txt2);border:1px solid var(--hair);border-radius:999px;padding:7px 16px;font:inherit;font-size:13px;cursor:pointer}
+  .switch button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#1a1206;font-weight:600}
+  .card{background:var(--surf);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;margin:16px 0}
+  [hidden]{display:none}
+  footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--hair);color:var(--txt3);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="switch">
+    <button id="b-fr" aria-pressed="true">Français</button>
+    <button id="b-en" aria-pressed="false">English</button>
+  </div>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <section id="fr">
+    <h1>Assistance</h1>
+    <p class="meta">Application <strong>Clap : Séries, Films</strong> — éditée par Karim Fardoun</p>
+
+    <p>Une question, un bug, une série qui s'affiche mal ? Écris-moi. Clap est développée par une seule personne : chaque message est lu, et la plupart reçoivent une réponse sous 48 heures.</p>
+
+    <div class="card">
+      <p style="margin:0"><strong>Contact</strong><br>
+      <a href="mailto:karim.fardoun@gmail.com">karim.fardoun@gmail.com</a></p>
+    </div>
+
+    <p>Pour aller plus vite, précise dans ton message : ton appareil (iPhone, Android, modèle), la version de l'application, et ce que tu faisais au moment du problème.</p>
+
+    <h2>Questions fréquentes</h2>
+
+    <h3>Puis-je regarder des films ou des séries dans Clap ?</h3>
+    <p>Non. Clap ne diffuse aucun contenu. L'application sert à suivre ce que tu regardes, noter les épisodes, tenir tes listes et savoir sur quelles plateformes un titre est disponible dans ton pays.</p>
+
+    <h3>Une série ou un film est absent, ou ses informations sont fausses</h3>
+    <p>Le catalogue provient de <a href="https://www.themoviedb.org/">TMDB</a>, une base collaborative. Si une fiche est incomplète ou erronée, elle peut être corrigée directement sur TMDB : la correction remonte ensuite dans Clap. Écris-moi si tu préfères que je m'en occupe.</p>
+
+    <h3>Les plateformes de streaming affichées sont incorrectes</h3>
+    <p>Les disponibilités viennent de JustWatch, via TMDB, et dépendent de ton pays. Elles évoluent souvent et peuvent avoir quelques jours de retard sur la réalité. Vérifie que le pays réglé dans <em>Profil</em> est bien le tien.</p>
+
+    <h3>J'ai perdu ma progression après avoir changé de téléphone</h3>
+    <p>Ta progression est rattachée à ton compte. Connecte-toi avec la même méthode qu'à l'origine (même adresse e-mail, ou le même bouton Apple / Google) et tes séries reviennent. Attention : « Se connecter avec Apple » et une connexion par e-mail créent deux comptes distincts, même si l'adresse est identique.</p>
+
+    <h3>Je n'ai pas reçu le code de vérification par e-mail</h3>
+    <p>Vérifie le dossier indésirables. Le code expire au bout de quelques minutes : si le tien est trop ancien, redemande-en un. Si rien n'arrive, écris-moi avec l'adresse utilisée.</p>
+
+    <h3>Comment supprimer mon compte et mes données ?</h3>
+    <p>Depuis l'application : <em>Profil → Supprimer mon compte</em>. La procédure complète, ainsi que la possibilité de demander la suppression par e-mail, est détaillée sur la page <a href="delete-account.html">Suppression du compte</a>.</p>
+
+    <h3>Comment désactiver les publicités personnalisées ?</h3>
+    <p>Depuis <em>Profil → Confidentialité et publicités</em>. Tu peux revenir sur ton choix à tout moment. Refuser le suivi ne limite en rien l'usage de l'application.</p>
+
+    <h3>Où trouver la politique de confidentialité ?</h3>
+    <p>Sur la page <a href="privacy.html">Politique de confidentialité</a>.</p>
+
+    <footer>
+      Clap — Karim Fardoun · <a href="privacy.html">Confidentialité</a> · <a href="delete-account.html">Suppression du compte</a><br>
+      Cette application utilise l'API de TMDB, mais n'est ni approuvée ni certifiée par TMDB.
+    </footer>
+  </section>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section id="en" hidden>
+    <h1>Support</h1>
+    <p class="meta"><strong>Clap: Séries, Films</strong> — published by Karim Fardoun</p>
+
+    <p>A question, a bug, a show that looks wrong? Email me. Clap is built by one person: every message is read, and most get an answer within 48 hours.</p>
+
+    <div class="card">
+      <p style="margin:0"><strong>Contact</strong><br>
+      <a href="mailto:karim.fardoun@gmail.com">karim.fardoun@gmail.com</a></p>
+    </div>
+
+    <p>To speed things up, include your device (iPhone, Android, model), the app version, and what you were doing when the problem happened.</p>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>Can I watch movies or shows inside Clap?</h3>
+    <p>No. Clap streams nothing. It is there to track what you watch, rate episodes, keep your lists, and tell you which platforms carry a title in your country.</p>
+
+    <h3>A movie or show is missing, or its details are wrong</h3>
+    <p>The catalogue comes from <a href="https://www.themoviedb.org/">TMDB</a>, a community-maintained database. Incomplete or incorrect entries can be fixed directly on TMDB, and the correction flows back into Clap. Email me if you would rather I handle it.</p>
+
+    <h3>The streaming platforms shown are wrong</h3>
+    <p>Availability comes from JustWatch, through TMDB, and depends on your country. It changes often and can lag reality by a few days. Check that the country set in <em>Profile</em> is the right one.</p>
+
+    <h3>I lost my progress after switching phones</h3>
+    <p>Your progress is tied to your account. Sign in the same way you originally did (same email address, or the same Apple / Google button) and your shows come back. Note that "Sign in with Apple" and an email sign-in create two separate accounts, even with the same address.</p>
+
+    <h3>I did not receive the verification code by email</h3>
+    <p>Check your spam folder. The code expires after a few minutes: if yours is too old, request a new one. If nothing arrives, email me with the address you used.</p>
+
+    <h3>How do I delete my account and my data?</h3>
+    <p>In the app: <em>Profil → Supprimer mon compte</em>. The full procedure, including how to request deletion by email, is on the <a href="delete-account.html">Account deletion</a> page.</p>
+
+    <h3>How do I turn off personalised ads?</h3>
+    <p>From <em>Profile → Privacy and ads</em>. You can change your mind at any time. Declining tracking does not restrict the app in any way.</p>
+
+    <h3>Where is the privacy policy?</h3>
+    <p>On the <a href="privacy.html">Privacy Policy</a> page.</p>
+
+    <footer>
+      Clap — Karim Fardoun · <a href="privacy.html">Privacy</a> · <a href="delete-account.html">Account deletion</a><br>
+      This product uses the TMDB API but is not endorsed or certified by TMDB.
+    </footer>
+  </section>
+
+</div>
+<script>
+  var fr = document.getElementById('fr'), en = document.getElementById('en');
+  var bfr = document.getElementById('b-fr'), ben = document.getElementById('b-en');
+  function show(lang){
+    var isFr = lang === 'fr';
+    fr.hidden = !isFr; en.hidden = isFr;
+    bfr.setAttribute('aria-pressed', String(isFr));
+    ben.setAttribute('aria-pressed', String(!isFr));
+  }
+  bfr.addEventListener('click', function(){ show('fr'); });
+  ben.addEventListener('click', function(){ show('en'); });
+  if ((navigator.language || 'fr').slice(0,2) !== 'fr') show('en');
+</script>
+</body>
+</html>
